@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0b0b0a;
+  --color-paper: #f1ede3;
+  --color-dim: #a8a395;
+  --color-tape: #f2e600;
+  --font-display: var(--font-anton);
+  --font-sans: var(--font-archivo);
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-archivo), system-ui, sans-serif;
+}
+
+/* fita amarela/preta de obra, usada em placeholder e divisores */
+.tape {
+  background: repeating-linear-gradient(-45deg, var(--color-tape) 0 14px, var(--color-ink) 14px 28px);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-tape);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--color-ink);
+}
