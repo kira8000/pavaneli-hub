@@ -57,13 +57,13 @@ export default function Home() {
               ["#repco", "REPCO"],
               ["#links", "Ouvir / seguir"],
             ].map(([href, label]) => (
-              <a key={href} href={href} className="bg-paper px-3 py-1 text-ink hover:bg-tape">
+              <a key={href} href={href} className="inline-flex min-h-11 items-center bg-paper px-3 text-ink hover:bg-tape">
                 {label}
               </a>
             ))}
           </nav>
         </div>
-        <PhotoSlot photo={pavaneli.photo} label="Pavaneli" className="aspect-[4/5] -rotate-1" />
+        <PhotoSlot photo={pavaneli.photo} label="Pavaneli" className="aspect-[4/3] -rotate-1 md:aspect-[4/5]" />
       </header>
 
       <main id="conteudo">
@@ -95,7 +95,7 @@ export default function Home() {
                   <span className="block font-semibold">{batalha.address.venue}</span>
                   {batalha.address.line}
                 </address>
-                <a href={batalha.address.mapsHref} {...external} className="mt-4 inline-block bg-tape px-3 py-1 font-display uppercase tracking-wide text-ink hover:bg-paper">
+                <a href={batalha.address.mapsHref} {...external} className="mt-4 inline-flex min-h-11 items-center bg-tape px-3 font-display uppercase tracking-wide text-ink hover:bg-paper">
                   Abrir no mapa
                 </a>
               </div>
@@ -139,7 +139,7 @@ export default function Home() {
               {links.map((l) => (
                 <li key={l.href}>
                   <a href={l.href} {...external} className="flex flex-wrap items-baseline justify-between gap-x-3 border-4 border-paper p-4 hover:bg-tape hover:text-ink">
-                    <span className="font-display text-3xl uppercase">{l.label}</span>
+                    <span className="font-display text-2xl uppercase md:text-3xl">{l.label}</span>
                     <span className="font-semibold">
                       {l.handle} <span aria-hidden>↗</span>
                       <span className="sr-only"> (abre em nova aba)</span>

@@ -88,9 +88,12 @@ Hub (09/11/2026): ver "Pendências e débitos do hub" abaixo (lista completa e m
 
 ## Estado do código (atualizado 09/11/2026)
 - Pasta: `C:\Users\guilh\Desktop\Projects\pavaneli-hub`. Git iniciado, **sem commit**, sem remoto, sem deploy.
+  _Atualizado 09/11/2026: já com commits e remoto `origin` (github.com/kira8000/pavaneli-hub, branch `main`); sem deploy._
 - Stack: Next 16.4.6 (App Router, `output: "export"`), React 19, Tailwind 4, TypeScript. Sem banco, sem analytics.
 - v0 pronto localmente: página única `src/app/page.tsx`, todo o texto em `src/content.ts`. Lint e build passando;
   conferido no navegador em desktop (1280px) e mobile (375px).
+- 09/11/2026: ajuste mobile: botões com 44px de altura mínima (alvo de toque), hero 4:3 no mobile, rótulos de
+  "Ouvir/seguir" em `text-2xl` no mobile para não quebrar linha. Conferido em 375px; lint e build passando.
 - Seções: hero Pavaneli (cita "Pava MC") · Quem rima (bio + lançamentos) · Batalha da SAN (próxima edição,
   endereço com link de mapa, números, bio) · REPCO · Ouvir/seguir (Spotify, Instagram pessoal, Instagram batalha)
   · Contato (placeholder "chama no Instagram" enquanto `contact: null`).
@@ -109,7 +112,7 @@ Marque `[x]` com data ao concluir; não apague a linha.
 **Depende do usuário (conteúdo/decisão)**
 - [ ] E-mail de contato → `contact: { email }` no `content.ts`.
 - [ ] Fotos reais (hero Pavaneli, Batalha, REPCO) com `alt` descritivo → `public/fotos/` + `photo` no `content.ts`.
-      Ao trocar, conferir o corte no mobile (hero é 4:5, batalha 16:9, REPCO quadrada; foto vira P&B).
+      Ao trocar, conferir o corte no mobile (hero é 4:3 no mobile e 4:5 no desktop, batalha 16:9, REPCO quadrada; foto vira P&B).
 - [ ] Liberar ou não no site: lista de campeões e o nome "Blecaute" (hoje fora, decisão de 09/11/2026).
 - [ ] Deploy na Vercel: importar o repo do GitHub (preset Next.js, build `next build`); ver a URL publicada no celular.
 - [ ] Comprar pavaneli.com.br e apontar para a Vercel (adiado).
