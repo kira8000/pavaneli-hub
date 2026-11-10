@@ -84,7 +84,7 @@ SAN. Organiza, registra e filma a cena de rima da Vila Matilde.
 
 ## Débitos
 Planilha completa · fotos · compra do domínio · organizar vídeo bruto · busca "Pavaneli" no Apple Music · chamado SoundOn (A Pura).
-Hub (09/11/2026): e-mail de contato · primeiro commit · deploy Vercel · liberar (ou não) campeões e "Blecaute" no site.
+Hub (09/11/2026): ver "Pendências e débitos do hub" abaixo (lista completa e mantida lá).
 
 ## Estado do código (atualizado 09/11/2026)
 - Pasta: `C:\Users\guilh\Desktop\Projects\pavaneli-hub`. Git iniciado, **sem commit**, sem remoto, sem deploy.
@@ -101,3 +101,41 @@ Hub (09/11/2026): e-mail de contato · primeiro commit · deploy Vercel · liber
   Também fora: seguidores, editais, roadmap, significado da sigla SAN.
 - Próxima edição no site: 19/11/2026. Não atualiza sozinha: editar `batalha.nextEdition` a cada edição.
 - Onde olhar em sessão nova: `CLAUDE.md` (regras e comandos), este arquivo (contexto), `README.md` (como editar).
+- Remoto: https://github.com/kira8000/pavaneli-hub (branch `main`).
+
+## Pendências e débitos do hub (próximas sessões)
+Marque `[x]` com data ao concluir; não apague a linha.
+
+**Depende do usuário (conteúdo/decisão)**
+- [ ] E-mail de contato → `contact: { email }` no `content.ts`.
+- [ ] Fotos reais (hero Pavaneli, Batalha, REPCO) com `alt` descritivo → `public/fotos/` + `photo` no `content.ts`.
+      Ao trocar, conferir o corte no mobile (hero é 4:5, batalha 16:9, REPCO quadrada; foto vira P&B).
+- [ ] Liberar ou não no site: lista de campeões e o nome "Blecaute" (hoje fora, decisão de 09/11/2026).
+- [ ] Deploy na Vercel: importar o repo do GitHub (preset Next.js, build `next build`); ver a URL publicada no celular.
+- [ ] Comprar pavaneli.com.br e apontar para a Vercel (adiado).
+
+**Rotina de conteúdo**
+- [ ] Atualizar `batalha.nextEdition` depois de cada edição (no site: 19/11/2026). Extras com parceiros não
+      mudam a grade quinzenal.
+- [ ] Dez/2026, troca Pava Mc → Pavaneli nas plataformas: atualizar `pavaneli.aka`, o texto "aka … nas plataformas"
+      e o `handle` do Spotify em `links`; conferir se o link do Spotify muda.
+- [ ] Revisar números de `batalha.stats` (20+ edições, 8–16 MCs, ~30 pessoas, 4 especiais) quando a planilha estiver completa.
+
+**Débitos técnicos**
+- [ ] Prévia de link (Open Graph/Twitter: imagem, título, descrição) para quando o link for compartilhado no
+      Instagram/WhatsApp. Hoje só há `title` e `description`. Depende de foto.
+- [ ] Favicon ainda é o padrão do Next (`src/app/favicon.ico`).
+- [ ] `nextEdition` é manual. Calcular a partir da grade quinzenal só vale quando houver exceções registradas
+      (pausas, datas sem edição); até lá, manual é mais seguro.
+- [ ] `npm audit`: 0 vulnerabilidades em produção; 1 moderada no `minimatch` (dev, via ESLint). Não usar
+      `audit fix --force`; atualizar quando o `eslint-config-next` subir.
+- [ ] Verificação visual incompleta: desktop conferido por medição de layout e capturas parciais (janela minimizada);
+      a remoção de campeões/Blecaute foi conferida só no HTML do build, não no navegador. Rever a página inteira
+      no navegador em desktop e mobile, idealmente já com fotos.
+- [ ] Sem `.gitattributes`: Git avisa conversão CRLF→LF no Windows. Inofensivo; fixar `* text=auto eol=lf` se incomodar.
+- [ ] Sem testes automatizados (página só renderiza dados; o tipo `Content` + `npm run build` são o portão).
+      Criar teste quando entrar lógica (ex.: cálculo de data, leitura do Versus).
+
+**Próximas fases (roadmap, não começar sem o usuário pedir)**
+- [ ] v1: rotas `/batalha` (histórico/ranking vindo do Versus) e `/repco`; domínio.
+- [ ] Integração com Versus só depois do Versus Web estável e da planilha importada.

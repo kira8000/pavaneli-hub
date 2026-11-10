@@ -5,6 +5,8 @@
 Leia primeiro **[docs/CONTEXT.md](docs/CONTEXT.md)**: é a fonte única de verdade do projeto (quem é o usuário,
 decisões, textos aprovados, links, dados da batalha, editais, roadmap, débitos, estado do código).
 Nunca apague nem reescreva informação de lá: acrescente, e marque o que ficou desatualizado com data.
+Ao começar, veja a seção **"Pendências e débitos do hub"** do CONTEXT; ao terminar, atualize-a (`[x]` + data,
+item novo se surgir) e a seção "Estado do código".
 
 ## Quem é o usuário
 Guilherme, artista **Pavaneli** (nas plataformas ainda "Pava Mc") e dev full stack (React/Next/TypeScript).
